@@ -1,0 +1,65 @@
+--EXPLICACION DEL CODIGO
+Para resolver el ejercicio primero se me presento el problema de como separar el numero en partes
+mas pequeñas, por lo que tenia la idea de realizarlo poniendo el numero en una lista y de esta manera 
+separarlo por elementos, al final decidí que la mejor opccion era transformar el numero a un string para 
+separarlo con funcion especificas para los string, como "take" y "reverse".(En realidad como un string es
+una cadena de caracteres hubiera sido similar hacerlo con una lista de numeros). Luego dividí el proceso 
+en 3 partes.
+1. Periodo de ingreso: 
+En esta parte creé una función que devolve un string el cual empieza con el numero 20 y sigue con los primeros 
+dos digitos del numero para formar el año y termina añadiendo un guion con el tercer digito para representar
+el semestre.
+2. Programa academico: 
+Primero convierto el numero a String para poder seleccionar los dos digitos del medio y despues convertirlo
+nuevamente a int, academicProgram determina un programa académico basado en la suma de los divisores del número 
+haciendo uso del operador mod y tambien haciendo uso de recursividad para encontrar los divisores del número 
+comprobando cada número menor que el mismo y guardar esos divisores en una lista para luego sumarlos, luego 
+comparo esta suma con el número de dos digitos para decidir entre "Administratives", "Engineering" o "Humanities". 
+3. Numero de admision:
+Ya en la parte final, como en las otras empecé transformando el numero a string y de esta manera quedarme solo
+con los ultimo 3 digitos y convertirlo de nuevo a int, por ultimo simplemente hice una comparacion muy sencilla
+con el operador mod para verificar si el numero es par o no.
+(En el main solo se ejecutan 3 funciones, las cuales son las principales y cada una ejecuta una de estas partes)
+
+--CURRYING PROCESS
+el proceso de currificación se manifiesta en cómo las funciones están diseñadas para tomar argumentos de uno en uno,
+en mi caso no se hace explícito en mis funciones, la cosa es que Haskell maneja las funciones de esta manera internamente. 
+Esto ayuda en una gran flexibilidad en la aplicación parcial de funciones y en la composición funcional, en mi codigo se puede 
+ver empleado mas que todo en funciones como academicProgram, sumDividers y searchDividers.
+
+--FUNCIONES
+1. stringToNum
+No es polimorfica ni de orden superior ya que trabaja con variables string e Int, por otro lado, no 
+es de orden superior porque no tiene funciones como parametros ni como resultado
+2. middleOnes
+No es polimorfica ni de orden superior ya que trabaja simplemente con variables string, por otro lado, no 
+es de orden superior porque no tiene funciones como parametros ni como resultado
+3.academicProgram
+No es ninguno de los dos ya toma Int y devulve string, no maneja funciones como argumentos o resultados.
+4. sumDividers
+No es polimorfica ya que toma simplemente toma un Int y devuelve un Int, pero si es de orden superio ya que 
+utililza la funcion sum, la cual es de orden superior.
+5. dividersList
+No es polimorfica porque trabaja trabaja especificamente con Int, en este caso toma un Int y devulve una lista
+de Int, y no es de orden superior porque no toma ni devuelve funciones.
+6. academicProgram
+No es polimorfica porque trabaja trabaja especificamente con Int, en este caso toma un Int y devulve una lista
+de Int, y no es de orden superior porque no toma ni devuelve funciones.
+7. numToString
+No es polimorfica ni de orden superior ya que trabaja con variables Int y string, por otro lado, no 
+es de orden superior porque no tiene funciones como parametros ni como resultado.
+8. firstThree
+No es polimorfica ni de orden superior ya que trabaja simplemente con variables string, por otro lado, no 
+es de orden superior porque no tiene funciones como parametros ni como resultado.
+9. incomePeriod
+No es polimorfica porque maneja tipos especicos en sus variables y no es de orden superior porque no tiene
+funciones como parametros ni como resultado.
+10. lastThree
+No es polimorfica ni de orden superior ya que trabaja simplemente con variables string, por otro lado, no 
+es de orden superior porque no tiene funciones como parametros ni como resultado.
+11. admissionNumber
+No es polimórfica porque trabaja con tipos específicos Int y string, por otro lado, no se de orden superior 
+ya que no tiene funciones como parametros ni como resultado.
+
+LINK REPOSITORIO:
+https://github.com/fernandezvanoy/Student-s-ID-Card-Practice-2-Fernandez-Vanoy
